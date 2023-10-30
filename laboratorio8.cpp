@@ -17,18 +17,21 @@ class Rectangle
 		float _width;
 };
 
+// constructor default
 Rectangle::Rectangle()
 {
 	_height = 1;
 	_width = 1;
 }
 
+// constructor por parametros
 Rectangle::Rectangle(float h, float w)
 {
 	_height = h;
 	_width = w;
 }
 
+// retorna el area del rectangulo
 float Rectangle::CalculateArea()
 {
 	return _height * _width;
@@ -54,18 +57,21 @@ class Point
 		float _y;
 };
 
+// constructor default
 Point::Point()
 {
 	_x = 0;
 	_y = 0;
 }
 
+// constructor por parametros
 Point::Point(float x, float y)
 {
 	_x = x;
 	_y = y;
 }
 
+// mueve el punto ingresado y muestra por cuanto se movio
 void Point::MovePoint(float new_x, float new_y)
 {
 	cout << "Moving Point by:" << endl << _x-new_x << " in x axis" << endl << _y-new_y << " in y axis";
@@ -95,11 +101,13 @@ class LinkedList
 		ListNode *head;
 };
 
+// constructor
 LinkedList::LinkedList(ListNode *h)
 {
 	head = h;
 }
 
+// inserta nodo en la lista
 void LinkedList::InsertNode(int data)
 {
 	if (head != NULL)
@@ -114,6 +122,7 @@ void LinkedList::InsertNode(int data)
 		head = new ListNode{data, NULL};
 }
 
+// busca nodo en la lista
 bool LinkedList::SearchNode(int data)
 {
 	if (head != NULL)
@@ -129,6 +138,7 @@ bool LinkedList::SearchNode(int data)
 	return false;
 }
 
+// elimina nodo de lista
 void LinkedList::DeleteNode(int data)
 {
 	if (!SearchNode(data))
@@ -161,6 +171,7 @@ void LinkedList::DeleteNode(int data)
 	}
 }
 
+// imprmime lista
 void LinkedList::PrintList()
 {
 	if (head != NULL)
@@ -205,11 +216,13 @@ class BinaryTree
 		BinaryNode *root;
 };
 
+// constructor
 BinaryTree::BinaryTree(BinaryNode *r)
 {
 	root = r;
 }
 
+// inserta nodo en arbol con recursividad
 BinaryNode* BinaryTree::InsertNode(BinaryNode *current, int data)
 {
 	if (current == NULL)
@@ -223,6 +236,7 @@ BinaryNode* BinaryTree::InsertNode(BinaryNode *current, int data)
 	return current;
 }
 
+// busca nodo en el arbol
 bool BinaryTree::SearchNode(BinaryNode *current, int data)
 {
 	if (current == NULL)
@@ -236,6 +250,7 @@ bool BinaryTree::SearchNode(BinaryNode *current, int data)
 		return true;
 }
 
+// imprime arbol
 void BinaryTree::PrintTree(BinaryNode *current)
 {
 	if (current == NULL)
@@ -274,11 +289,13 @@ class GeneralTree
 		GeneralNode *root;
 };
 
+// constructor
 GeneralTree::GeneralTree(GeneralNode *r)
 {
 	root = r;
 }
 
+// inserta nodo en arbol, necesitando el valor del padre
 void GeneralTree::InsertNode(GeneralNode *current, int parent_data, int data)
 {
 	if (root == nullptr)
@@ -295,6 +312,7 @@ void GeneralTree::InsertNode(GeneralNode *current, int parent_data, int data)
 	}
 }
 
+// busca nodo en arbol
 bool GeneralTree::SearchNode(GeneralNode *current, int data)
 {
 	if (root == nullptr)
@@ -310,6 +328,7 @@ bool GeneralTree::SearchNode(GeneralNode *current, int data)
 	return false;
 }
 
+// imprime arbol
 void GeneralTree::PrintTree(GeneralNode *current, int depth)
 {
 	for (int i=0; i<depth; i++)
